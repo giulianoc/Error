@@ -36,6 +36,8 @@ SET (HEADERS
 
 add_library (Error SHARED ${SOURCES} ${HEADERS})
 
+target_compile_definitions(Error PRIVATE _REENTRANT)
+
 install (TARGETS Error DESTINATION lib)
 install (FILES ${HEADERS} DESTINATION include)
 
