@@ -39,5 +39,6 @@ add_library (Error SHARED ${SOURCES} ${HEADERS})
 target_compile_definitions(Error PRIVATE _REENTRANT)
 
 install (TARGETS Error DESTINATION lib)
-install (FILES ${HEADERS} DESTINATION include)
-
+if(NOT DEFINED ERROR_INSTALL_HEADERS OR ERROR_INSTALL_HEADERS)
+	install(FILES ${HEADERS} DESTINATION include)
+endif()
